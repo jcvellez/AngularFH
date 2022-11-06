@@ -1,10 +1,20 @@
 "use strict";
 (function () {
-    let avenger = {
-        nombre: 'Capitan',
-        clave: 'America',
-        poder: 'Droga'
+    let enviarMision = (xmen) => {
+        console.log(`Enviamos a ${xmen.nombre} a la mision`);
     };
-    let { nombre, poder } = avenger;
-    console.log(`Tu poder es ${poder}, eres el ${nombre}`);
+    let regresoAlCuartel = (spy) => {
+        console.log(`Regresa ${spy.nombre} a la casa, tiene ${spy.edad} y su poder es ${spy.poder}`);
+    };
+    let wolverine = {
+        nombre: 'Logan',
+        edad: 63
+    };
+    let spiderman = {
+        nombre: 'Peter',
+        edad: 33,
+        poder: true
+    };
+    enviarMision(wolverine);
+    regresoAlCuartel(spiderman);
 })();
