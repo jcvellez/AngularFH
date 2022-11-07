@@ -1,20 +1,24 @@
 "use strict";
 (function () {
-    let enviarMision = (xmen) => {
-        console.log(`Enviamos a ${xmen.nombre} a la mision`);
-    };
-    let regresoAlCuartel = (spy) => {
-        console.log(`Regresa ${spy.nombre} a la casa, tiene ${spy.edad} y su poder es ${spy.poder}`);
-    };
-    let wolverine = {
-        nombre: 'Logan',
-        edad: 63
-    };
-    let spiderman = {
-        nombre: 'Peter',
-        edad: 33,
-        poder: true
-    };
-    enviarMision(wolverine);
-    regresoAlCuartel(spiderman);
+    class Avenger {
+        // nombre: string;
+        // equipo: string;
+        // nombreReal: string;
+        // puedePelear: boolean;
+        // peleasGanadas: number;
+        constructor(nombre, equipo, nombreReal, puedePelear = true, peleasGanadas = 0) {
+            this.nombre = nombre;
+            this.equipo = equipo;
+            this.nombreReal = nombreReal;
+            this.puedePelear = puedePelear;
+            this.peleasGanadas = peleasGanadas;
+            // this.nombre = nombre;
+            // this.equipo = equipo;
+            // this.nombreReal = nombreReal;
+            // this.peleasGanadas = peleasGanadas;
+            // this.puedePelear = puedePelear;
+        }
+    }
+    let antman = new Avenger('Antman', 'Capi');
+    console.log(antman);
 })();

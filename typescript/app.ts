@@ -1,29 +1,26 @@
 (function () {
-    interface Xmen {
-        nombre: string,
-        edad: number,
-        poder?: boolean
+    class Avenger {
+        // nombre: string;
+        // equipo: string;
+        // nombreReal: string;
+        // puedePelear: boolean;
+        // peleasGanadas: number;
+        constructor(public nombre: string,
+            public equipo?: string,
+            public nombreReal?: string,
+            public puedePelear: boolean = true,
+            public peleasGanadas: number = 0) {
+            // this.nombre = nombre;
+            // this.equipo = equipo;
+            // this.nombreReal = nombreReal;
+            // this.peleasGanadas = peleasGanadas;
+            // this.puedePelear = puedePelear;
+        }
     }
 
-    let enviarMision = (xmen: Xmen) => {
-        console.log(`Enviamos a ${xmen.nombre} a la mision`);
-    };
-    let regresoAlCuartel = (spy: Xmen) => {
-        console.log(`Regresa ${spy.nombre} a la casa, tiene ${spy.edad} y su poder es ${spy.poder}`);
-    };
+    let antman = new Avenger('Antman', 'Capi');
+    
+    console.log(antman);
 
-    let wolverine: Xmen = {
-        nombre: 'Logan',
-        edad: 63
-    };
-
-    let spiderman: Xmen={
-        nombre:'Peter',
-        edad:33,
-        poder: true
-    }
-
-    enviarMision(wolverine);
-    regresoAlCuartel(spiderman);
 
 })();
