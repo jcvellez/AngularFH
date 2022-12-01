@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroesService, Heroe } from "../../services/heroes.service";
 import { ActivatedRoute } from "@angular/router";
-import { Router } from "@angular/router";
+
 
 @Component({
   selector: 'app-heroes-find',
@@ -9,23 +9,19 @@ import { Router } from "@angular/router";
   styleUrls: ['./heroes-find.component.css']
 })
 export class HeroesFindComponent implements OnInit {
-  heroes : Heroe[] = [];
-  heroe: any = {};
+  heroes: any[] = [];
+  nombre: string ="";
   constructor(private _activatedRoute: ActivatedRoute,
-              private _heroesService: HeroesService,
-              private _router:Router) { 
-                this._activatedRoute.params.subscribe(params => {
-                  this.heroe = _heroesService.getHeroe(params['nombre'])
-                  console.log(this.heroe);
-            
-                });
-              }
+    private _heroesService: HeroesService) {    
+
+  }
 
   ngOnInit(): void {
-    this.heroes= this._heroesService.buscarHeroes(this.heroe);
-  }
-  
-  verHeroe(idx:number){
-    this._router.navigate(['/heroe',idx]);    
+    this._activatedRoute.params.subscribe(params => {  
+      this.nombre=  params['nombre'];        
+      this.heroes = this._heroesService.buscarHeroes(params['nombre']); 
+      console.log(this.heroes);
+    });
+    
   }
 }
