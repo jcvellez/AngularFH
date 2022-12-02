@@ -17,11 +17,19 @@ export class HeroesFindComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._activatedRoute.params.subscribe(params => {  
-      this.nombre=  params['nombre'];        
+    this._activatedRoute.params.subscribe(params => {  //esto sirve para atrapar el o los parametros
+      this.nombre=  params['nombre'];                  //que estan en la ruta.
       this.heroes = this._heroesService.buscarHeroes(params['nombre']); 
       console.log(this.heroes);
     });
+    
+  }
+  arrayVacio(){
+    if ((this.heroes).length===0) {
+      return false;  
+    }else{
+      return true;
+    }
     
   }
 }
