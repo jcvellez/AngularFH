@@ -1,6 +1,6 @@
 <h1>Buscando: <small>{{nombre}}</small></h1>
 <hr>
-<div *ngIf="arrayVacio()==false" animated fadeIn fast class="row">
+<div *ngIf="arrayVacio()==true" animated fadeIn fast class="row">
     <div class="col-md-12">
         <div class="alert alert-info" role="alert">
             <h1>No existen resultados con el termino {{nombre}}!!!</h1>
@@ -24,7 +24,7 @@
                         Ver mas... 
                     </button> -->
                 
-                 <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">Ver mas link...</a>
+                 <a [routerLink]="['/heroe',heroe.id]" class="btn btn-outline-primary">Ver mas link...</a>
                 </div>
             </div>
             

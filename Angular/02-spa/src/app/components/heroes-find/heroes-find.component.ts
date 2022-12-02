@@ -26,9 +26,9 @@ export class HeroesFindComponent implements OnInit {
   }
   arrayVacio(){
     if ((this.heroes).length===0) {
-      return false;  
+      return true;  
     }else{
-      return true;
+      return false;
     }
     
   }
