@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroesService, Heroe } from "../../services/heroes.service";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 
 @Component({
@@ -9,10 +9,12 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ['./heroes-find.component.css']
 })
 export class HeroesFindComponent implements OnInit {
-  heroes: any[] = [];
+  heroes: Heroe[] = [];
   nombre: string ="";
+
   constructor(private _activatedRoute: ActivatedRoute,
-    private _heroesService: HeroesService) {    
+    private _heroesService: HeroesService,
+    private _router:Router) {    
 
   }
 
@@ -29,7 +31,11 @@ export class HeroesFindComponent implements OnInit {
       return true;  
     }else{
       return false;
-    }
-    
+    }    
+  }
+
+  verHeroe(idx:number){
+    this._router.navigate(['/heroe',idx]); 
+    console.log(idx);    
   }
 }
