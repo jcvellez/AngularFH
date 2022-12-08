@@ -46,12 +46,53 @@
         <td>number:".0-2"</td>
         <td>{{PI | number:".0-2"}}</td>
       </tr>
+      <tr>
+        <td>{{porcentaje}}</td>
+        <td>percent</td>
+        <td>{{porcentaje | percent}}</td>
+      </tr>
+      <tr>
+        <td>{{porcentaje}}</td>
+        <td>percent:'2.2-2'</td>
+        <td>{{porcentaje | percent:'2.2-2'}}</td>
+      </tr>
+      <tr>
+        <td>{{salario}}</td>
+        <td>currency</td>
+        <td>{{salario | currency}}</td>
+      </tr>
+      <tr>
+        <td>{{salario}}</td>
+        <td>currency:'EUR'</td>
+        <td>{{salario | currency:'EUR'}}</td>
+      </tr>
+      <tr>
+        <td>{{salario}}</td>
+        <td>currency:'LMP ':'symbol-narrow':'.0-0'</td>
+        <td>{{salario | currency:'LMP ':'symbol-narrow':'.0-0'}}</td>
+      </tr>
+      <tr>
+        <td>{{valorPromesa}}</td>
+        <td>async</td>
+        <td>{{valorPromesa|async}}</td>
+      </tr>
+      
     </tbody>
   </table>
 
   <h4>Slice</h4>
   <ul>
-    <li *ngFor="let item of arreglo | slice:5:10 ">{{item}}</li> <!--Desde la 5ta posicion recorreme 10-->
+    <li *ngFor="let item of arreglo | slice:5:10 ">{{item}}</li>
+    <!--Desde la 5ta posicion recorreme 10-->
   </ul>
 
+  <h3>JSON</h3>
+  <hr>
+  <div class="row mb-5">
+    <div class="col">
+      <pre>
+        {{heroe|json}}
+      </pre>      
+    </div>
+  </div>
 </div>
