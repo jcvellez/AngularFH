@@ -13,6 +13,9 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 //Importar rutas
 import { ROUTES } from './app.routes';
 
+//Services
+
+
 
 
 @NgModule({
@@ -28,7 +31,7 @@ import { ROUTES } from './app.routes';
     HttpClientModule,
     RouterModule.forRoot(ROUTES, {useHash:true})
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
